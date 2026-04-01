@@ -5,9 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>247 Group — Travel Policy Acknowledgment</title>
 <style>
-  /* ── CONFIG ── change this before distributing */
-  /* See ADMIN_EMAIL below in the script section  */
-
   :root {
     --brand:       #7F77DD;
     --brand-dark:  #3C3489;
@@ -43,7 +40,6 @@
     box-shadow: 0 20px 60px rgba(0,0,0,0.4);
   }
 
-  /* ── Header ── */
   .page-header {
     background: var(--brand-dark);
     padding: 1.5rem 2rem;
@@ -74,7 +70,6 @@
   .doc-band-item { font-size: 11px; color: var(--gray-mid); }
   .doc-band-item strong { display: block; font-size: 13px; color: var(--brand-dark); }
 
-  /* ── Body ── */
   .form-body { padding: 2rem; }
 
   .progress-wrap { margin-bottom: 1.5rem; }
@@ -113,7 +108,6 @@
     margin-bottom: 12px;
   }
 
-  /* ── Checklist ── */
   .check-list { display: flex; flex-direction: column; gap: 8px; margin-bottom: 1.5rem; }
 
   .check-item {
@@ -135,7 +129,6 @@
   .check-text { font-size: 13px; line-height: 1.55; color: var(--gray-dark); }
   .check-text em { font-style: normal; font-weight: 600; color: var(--brand-mid); }
 
-  /* ── AMEX box ── */
   .amex-box {
     border: 2px solid var(--brand);
     border-radius: 10px;
@@ -168,7 +161,6 @@
   .amex-check input { width: 17px; height: 17px; accent-color: var(--brand); cursor: pointer; }
   .amex-check label { font-size: 13px; font-weight: 600; color: var(--gray-dark); cursor: pointer; }
 
-  /* ── Fields ── */
   .fields-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -206,7 +198,6 @@
     background: #fafafa;
     display: block;
   }
-  canvas#sig-pad.active { border-color: var(--brand); background: white; }
   .sig-hint {
     position: absolute; top: 50%; left: 50%;
     transform: translate(-50%, -50%);
@@ -221,7 +212,6 @@
   }
   .sig-clear:hover { color: var(--brand-dark); text-decoration: underline; }
 
-  /* ── Submit ── */
   .submit-btn {
     width: 100%; padding: 14px;
     background: var(--brand); color: white;
@@ -235,7 +225,6 @@
   .submit-btn:hover:not(:disabled) { background: var(--brand-mid); }
   .submit-btn:disabled { opacity: 0.28; cursor: not-allowed; }
 
-  /* ── Success screen ── */
   #success-screen { display: none; }
   .success-body { padding: 2rem; }
   .success-header {
@@ -291,9 +280,7 @@
     margin-bottom: 1.5rem;
   }
 
-  .action-btns {
-    display: flex; gap: 12px; flex-wrap: wrap;
-  }
+  .action-btns { display: flex; gap: 12px; flex-wrap: wrap; }
   .btn-outline {
     flex: 1; padding: 11px 16px;
     background: white; color: var(--brand-dark);
@@ -316,7 +303,6 @@
   }
   .btn-primary:hover { background: var(--brand-mid); }
 
-  /* ── Print styles ── */
   @media print {
     body { background: white; padding: 0; }
     .page { box-shadow: none; border-radius: 0; }
@@ -338,7 +324,6 @@
 
 <div class="page">
 
-  <!-- Shared header -->
   <div class="page-header">
     <div class="shield">
       <svg viewBox="0 0 24 24"><path d="M12 2L3 6v6c0 5.5 3.8 10.7 9 12 5.2-1.3 9-6.5 9-12V6L12 2zm-1 13.4l-3.5-3.5 1.4-1.4 2.1 2.1 4.6-4.6 1.4 1.4-6 6z"/></svg>
@@ -348,13 +333,14 @@
       <p>Employee Travel Policy Acknowledgment &nbsp;·&nbsp; Effective 26 February 2026</p>
     </div>
   </div>
+
   <div class="doc-band">
-    <div class="doc-band-item">Policy Authority<strong>Company Owner / CTO / COO</strong></div>
+    <div class="doc-band-item">Policy Authority<strong>Company Owner / CoTO / CoTacO</strong></div>
     <div class="doc-band-item">Reference Framework<strong>JTR / FAR / Fly America Act</strong></div>
     <div class="doc-band-item">Version<strong>1.0 &nbsp;·&nbsp; 26 Feb 2026</strong></div>
   </div>
 
-  <!-- ── FORM SCREEN ── -->
+  <!-- FORM SCREEN -->
   <div id="form-screen">
     <div class="form-body">
 
@@ -370,7 +356,6 @@
         Read each item carefully and check the box to confirm your understanding. All items must be acknowledged and your signature provided before you can submit. Unapproved expenses are your personal liability.
       </div>
 
-      <!-- Employee selector -->
       <div class="section-label">Your information</div>
       <div class="fields-grid" style="margin-bottom:1.5rem">
         <div class="field-group">
@@ -413,7 +398,6 @@
         </div>
       </div>
 
-      <!-- Policy acknowledgments -->
       <div class="section-label">Policy acknowledgments &mdash; check each to confirm</div>
       <div class="check-list">
         <label class="check-item" id="ci1">
@@ -450,7 +434,6 @@
         </label>
       </div>
 
-      <!-- AMEX box -->
       <div class="amex-box">
         <div class="amex-badge">MANDATORY</div>
         <div class="amex-title">AMEX Global Business Travel Portal</div>
@@ -462,7 +445,6 @@
         </div>
       </div>
 
-      <!-- Signature -->
       <div class="section-label">Signature</div>
       <div class="fields-grid" style="margin-bottom:14px">
         <div class="field-group full">
@@ -481,10 +463,10 @@
         &#10003;&nbsp; Submit Acknowledgment
       </button>
 
-    </div><!-- /form-body -->
-  </div><!-- /form-screen -->
+    </div>
+  </div>
 
-  <!-- ── SUCCESS SCREEN ── -->
+  <!-- SUCCESS SCREEN -->
   <div id="success-screen">
     <div class="success-body">
       <div class="success-header">
@@ -493,7 +475,7 @@
         </div>
         <div>
           <div class="success-title">Acknowledgment Submitted</div>
-          <div class="success-sub" id="success-sub-text">Your travel policy acknowledgment has been recorded and emailed to the 247 Group administrator. Print or save this page for your records.</div>
+          <div class="success-sub">Your travel policy acknowledgment has been recorded. Click "Email to Administrator" below, then print or save this page for your records.</div>
         </div>
       </div>
 
@@ -515,62 +497,68 @@
         <button class="btn-primary" id="email-btn" onclick="sendEmail()">&#9993;&nbsp; Email to Administrator</button>
       </div>
     </div>
-  </div><!-- /success-screen -->
+  </div>
 
 </div><!-- /page -->
 
-var canvas = document.getElementById('sig-pad');
-var ctx    = canvas.getContext('2d');
-var drawing = false, hasSig = false;
+<script>
+var FORMSPREE = 'https://formspree.io/f/xnjozyre';
 
-canvas.width = canvas.offsetWidth || 720;
+var canvas  = document.getElementById('sig-pad');
+var ctx     = canvas.getContext('2d');
+var drawing = false;
+var hasSig  = false;
+
+canvas.width    = canvas.offsetWidth || 720;
 ctx.strokeStyle = '#2C2C2A';
 ctx.lineWidth   = 2;
 ctx.lineCap     = 'round';
 ctx.lineJoin    = 'round';
 
 function getPos(e) {
-  var r = canvas.getBoundingClientRect();
-  var scaleX = canvas.width / r.width;
+  var r      = canvas.getBoundingClientRect();
+  var scaleX = canvas.width  / r.width;
   var scaleY = canvas.height / r.height;
   if (e.touches) return { x: (e.touches[0].clientX - r.left) * scaleX, y: (e.touches[0].clientY - r.top) * scaleY };
   return { x: (e.clientX - r.left) * scaleX, y: (e.clientY - r.top) * scaleY };
 }
-canvas.addEventListener('mousedown', function(e){ drawing=true; var p=getPos(e); ctx.beginPath(); ctx.moveTo(p.x,p.y); });
-canvas.addEventListener('mousemove', function(e){ if(!drawing)return; var p=getPos(e); ctx.lineTo(p.x,p.y); ctx.stroke(); hasSig=true; document.getElementById('sig-hint').style.opacity='0'; updateProgress(); });
-canvas.addEventListener('mouseup',   function(){ drawing=false; });
-canvas.addEventListener('mouseleave',function(){ drawing=false; });
+
+canvas.addEventListener('mousedown',  function(e){ drawing=true; var p=getPos(e); ctx.beginPath(); ctx.moveTo(p.x,p.y); });
+canvas.addEventListener('mousemove',  function(e){ if(!drawing)return; var p=getPos(e); ctx.lineTo(p.x,p.y); ctx.stroke(); hasSig=true; document.getElementById('sig-hint').style.opacity='0'; updateProgress(); });
+canvas.addEventListener('mouseup',    function(){ drawing=false; });
+canvas.addEventListener('mouseleave', function(){ drawing=false; });
 canvas.addEventListener('touchstart', function(e){ e.preventDefault(); drawing=true; var p=getPos(e); ctx.beginPath(); ctx.moveTo(p.x,p.y); }, {passive:false});
 canvas.addEventListener('touchmove',  function(e){ e.preventDefault(); if(!drawing)return; var p=getPos(e); ctx.lineTo(p.x,p.y); ctx.stroke(); hasSig=true; document.getElementById('sig-hint').style.opacity='0'; updateProgress(); }, {passive:false});
 canvas.addEventListener('touchend',   function(){ drawing=false; });
 
-function clearSig(){
-  ctx.clearRect(0,0,canvas.width,canvas.height);
-  hasSig=false;
-  document.getElementById('sig-hint').style.opacity='1';
+function clearSig() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  hasSig = false;
+  document.getElementById('sig-hint').style.opacity = '1';
   updateProgress();
 }
 
-function syncItem(cb, id){
+function syncItem(cb, id) {
   document.getElementById(id).classList.toggle('checked', cb.checked);
 }
-function syncAmex(){
+
+function syncAmex() {
   var cb = document.getElementById('amex-ack');
   document.getElementById('amex-wrap').style.background = cb.checked ? '#EEEDFE' : '';
 }
 
-function updateProgress(){
-  var checks = document.querySelectorAll('.check-list input[type=checkbox]');
+function updateProgress() {
+  var checks  = document.querySelectorAll('.check-list input[type=checkbox]');
   var checked = 0;
-  checks.forEach(function(c){ if(c.checked) checked++; });
-  var amex  = document.getElementById('amex-ack').checked   ? 1 : 0;
-  var name  = document.getElementById('emp-name').value     ? 1 : 0;
-  var date  = document.getElementById('emp-date').value     ? 1 : 0;
-  var sig   = hasSig                                         ? 1 : 0;
+  checks.forEach(function(c){ if (c.checked) checked++; });
 
-  var total = 12; // 8 checks + amex + name + date + sig
-  var done  = checked + amex + name + date + sig;
-  var pct   = Math.round((done / total) * 100);
+  var amex = document.getElementById('amex-ack').checked ? 1 : 0;
+  var name = document.getElementById('emp-name').value   ? 1 : 0;
+  var date = document.getElementById('emp-date').value   ? 1 : 0;
+  var sig  = hasSig                                       ? 1 : 0;
+
+  var done = checked + amex + name + date + sig;
+  var pct  = Math.round((done / 12) * 100);
 
   document.getElementById('prog-fill').style.width = pct + '%';
   document.getElementById('prog-pct').textContent  = pct + '%';
@@ -579,79 +567,77 @@ function updateProgress(){
   document.getElementById('submit-btn').disabled = !ready;
 }
 
-function generateRef(){
+function generateRef() {
   var chars = 'ABCDEFGHJKMNPQRSTVWXYZ23456789';
   var r = '247-';
-  for(var i=0;i<8;i++) r += chars[Math.floor(Math.random()*chars.length)];
+  for (var i = 0; i < 8; i++) r += chars[Math.floor(Math.random() * chars.length)];
   return r;
 }
 
 var submissionData = {};
 
-function submitForm(){
+function submitForm() {
   var ref = generateRef();
   var now = new Date();
   submissionData = {
-    ref:      ref,
-    name:     document.getElementById('emp-name').value,
-    title:    document.getElementById('emp-title').value   || '—',
-    contract: document.getElementById('emp-contract').value|| '—',
-    date:     document.getElementById('emp-date').value,
-    submitted: now.toLocaleString('en-US',{month:'short',day:'numeric',year:'numeric',hour:'2-digit',minute:'2-digit'}),
-    policy:   'Travel Policy · 26 Feb 2026 · v1.0',
+    ref:       ref,
+    name:      document.getElementById('emp-name').value,
+    title:     document.getElementById('emp-title').value    || '—',
+    contract:  document.getElementById('emp-contract').value || '—',
+    date:      document.getElementById('emp-date').value,
+    submitted: now.toLocaleString('en-US', {month:'short', day:'numeric', year:'numeric', hour:'2-digit', minute:'2-digit'}),
+    policy:    'Travel Policy · 26 Feb 2026 · v1.0',
   };
 
-  // Build receipt
   var rows = [
-    ['Employee', submissionData.name],
-    ['Title / Position', submissionData.title],
+    ['Employee',           submissionData.name],
+    ['Title / Position',   submissionData.title],
     ['Contract / Program', submissionData.contract],
-    ['Policy Acknowledged', submissionData.date],
-    ['Submitted', submissionData.submitted],
-    ['Policy Version', submissionData.policy],
+    ['Policy Acknowledged',submissionData.date],
+    ['Submitted',          submissionData.submitted],
+    ['Policy Version',     submissionData.policy],
   ];
   var html = '';
   rows.forEach(function(r){
-    html += '<div class="receipt-row"><span class="lbl">'+r[0]+'</span><span class="val">'+r[1]+'</span></div>';
+    html += '<div class="receipt-row"><span class="lbl">' + r[0] + '</span><span class="val">' + r[1] + '</span></div>';
   });
   document.getElementById('receipt-rows').innerHTML = html;
   document.getElementById('ref-pill').textContent = 'REF: ' + ref;
 
-  document.getElementById('form-screen').style.display = 'none';
+  document.getElementById('form-screen').style.display    = 'none';
   document.getElementById('success-screen').style.display = 'block';
 }
 
-function sendEmail(){
+function sendEmail() {
   var d = submissionData;
-  fetch('https://formspree.io/f/xnjozyre', { 
+  fetch(FORMSPREE, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      _subject:    '247 Group Travel Policy Acknowledgment – ' + d.name,  // ← email subject
-  employee:    d.name,
-  title:       d.title,
-  contract:    d.contract,
-  date:        d.date,
-  submitted:   d.submitted,
-  reference:   d.ref,
-  policy:      d.policy,
-  notes:       'Employee acknowledged all 8 policy items and mandatory AMEX GBT portal use.',
+      _subject:  '247 Group Travel Policy Acknowledgment – ' + d.name,
+      employee:  d.name,
+      title:     d.title,
+      contract:  d.contract,
+      date:      d.date,
+      submitted: d.submitted,
+      reference: d.ref,
+      policy:    d.policy,
+      notes:     'Employee acknowledged all 8 policy items and mandatory AMEX GBT portal use.',
     })
   })
-  .then(function(r){
-    if(r.ok){
+  .then(function(r) {
+    if (r.ok) {
       document.getElementById('email-btn').textContent = '✓ Sent to Administrator';
       document.getElementById('email-btn').disabled = true;
     } else {
       alert('Submission failed — please email ' + d.ref + ' to bquam@247grp.net manually.');
     }
   })
-  .catch(function(){
+  .catch(function() {
     alert('Network error — please email ' + d.ref + ' to bquam@247grp.net manually.');
   });
 }
 
-// Set today's date
 document.getElementById('emp-date').valueAsDate = new Date();
 updateProgress();
 </script>
