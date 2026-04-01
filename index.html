@@ -519,11 +519,6 @@
 
 </div><!-- /page -->
 
-<script>
-// ── ADMIN CONFIG ─────────────────────────────────────────────────────────────
-var ADMIN_EMAIL = 'admin@247grp.net; bradquam@247grp.net' // ← UPDATE before distributing
-// ─────────────────────────────────────────────────────────────────────────────
-
 var canvas = document.getElementById('sig-pad');
 var ctx    = canvas.getContext('2d');
 var drawing = false, hasSig = false;
@@ -628,7 +623,7 @@ function submitForm(){
 
 function sendEmail(){
   var d = submissionData;
-  fetch('https://formspree.io/f/xnjozyre', 
+  fetch('https://formspree.io/f/xnjozyre', { 
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
