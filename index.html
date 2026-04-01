@@ -628,23 +628,32 @@ function submitForm(){
 
 function sendEmail(){
   var d = submissionData;
-  var subject = encodeURIComponent('247 Group Travel Policy Acknowledgment \u2013 ' + d.name);
-  var body = encodeURIComponent(
-    '247 GROUP \u2014 TRAVEL POLICY ACKNOWLEDGMENT\n' +
-    '================================================\n\n' +
-    'Employee:          ' + d.name      + '\n' +
-    'Title/Position:    ' + d.title     + '\n' +
-    'Contract/Program:  ' + d.contract  + '\n' +
-    'Date Acknowledged: ' + d.date      + '\n' +
-    'Submitted:         ' + d.submitted + '\n' +
-    'Reference #:       ' + d.ref       + '\n\n' +
-    'Policy Version: ' + d.policy + '\n\n' +
-    'The employee acknowledged all 8 travel policy items and the mandatory\n' +
-    'use of the AMEX GBT portal (app.neo1.com) for all company travel bookings.\n\n' +
-    '-- Please log this reference number in the Google Drive tracker. --\n' +
-    'Tracker: https://drive.google.com/\n'
-  );
-  window.location.href = 'mailto:' + ADMIN_EMAIL + '?subject=' + subject + '&body=' + body;
+  fetch('https://formspree.io/f/xnjozyre', 
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      _subject:    '247 Group Travel Policy Acknowledgment – ' + d.name,  // ← email subject
+  employee:    d.name,
+  title:       d.title,
+  contract:    d.contract,
+  date:        d.date,
+  submitted:   d.submitted,
+  reference:   d.ref,
+  policy:      d.policy,
+  notes:       'Employee acknowledged all 8 policy items and mandatory AMEX GBT portal use.',
+    })
+  })
+  .then(function(r){
+    if(r.ok){
+      document.getElementById('email-btn').textContent = '✓ Sent to Administrator';
+      document.getElementById('email-btn').disabled = true;
+    } else {
+      alert('Submission failed — please email ' + d.ref + ' to bquam@247grp.net manually.');
+    }
+  })
+  .catch(function(){
+    alert('Network error — please email ' + d.ref + ' to bquam@247grp.net manually.');
+  });
 }
 
 // Set today's date
